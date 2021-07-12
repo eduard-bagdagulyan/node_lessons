@@ -1,0 +1,22 @@
+{
+  "name": "node_lessons",
+  "version": "1.0.0",
+  "description": "Hello World",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eduard-bagdagulyan/node_lessons.git"
+  },
+  "author": "Eduard Bagdagulyan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eduard-bagdagulyan/node_lessons/issues"
+  },
+  "homepage": "https://github.com/eduard-bagdagulyan/node_lessons#readme",
+  "dependencies": {
+    "minimist": "^1.2.5"
+  }
+}
