@@ -1,15 +1,18 @@
 const EventEmitter = require('events');
 const logger = new EventEmitter();
+const process = require('process')
+const args = process.argv.slice(2)
+
 const users = []
 const msgs = []
 
 logger.on('message', (msg) => {
-    console.log(`New Message ${msg}`);
+    console.log(`New Message: ${msg}`);
     msgs.push(msg);
 })
 
 logger.on('login', (name) => {
-    console.log(`New User ${name}`);
+    console.log(`New User: ${name}`);
     users.push(name);
 })
 
@@ -27,10 +30,14 @@ logger.on('getMessages', () => {
     }
 })
 
-
-logger.emit('message', 'Hello World!')
-logger.emit('login', 'Eduard')
-logger.emit('getUsers')
-logger.emit('getMessages')
-
-
+if (args) {
+    if (args[0] == '--addUser') {
+        logger.emit('login', args[1])
+    } else if (args[0] == '--message') {
+        logger.emit('message', args[1])
+    } else {
+        console.log('Undefined Command');
+    }
+} else {
+    console.log('You have not entered args');
+}
