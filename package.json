@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/eduard-bagdagulyan/node_lessons#readme",
   "dependencies": {
-    "minimist": "^1.2.5"
+    "csvtojson": "^2.0.10",
+    "minimist": "^1.2.5",
+    "tree-node-cli": "^1.4.0"
   },
   "devDependencies": {
     "mocha": "^9.0.2"

@@ -1,0 +1,70 @@
+{
+  "_args": [
+    [
+      "@newrelic/winston-enricher@1.0.0",
+      "/Users/David_Nazaryan/Projects/web-exp-api"
+    ]
+  ],
+  "_from": "@newrelic/winston-enricher@1.0.0",
+  "_id": "@newrelic/winston-enricher@1.0.0",
+  "_inBundle": false,
+  "_integrity": "sha512-wFTwUoCd1YJIhfJ6EqcztOwf1QlzVpyPsVy+r/VXuIzcMN6P8xQxO0Zg74DZwJ0tFj8rz1AwjhCiXlb2+tKhng==",
+  "_location": "/@newrelic/winston-enricher",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@newrelic/winston-enricher@1.0.0",
+    "name": "@newrelic/winston-enricher",
+    "escapedName": "@newrelic%2fwinston-enricher",
+    "scope": "@newrelic",
+    "rawSpec": "1.0.0",
+    "saveSpec": null,
+    "fetchSpec": "1.0.0"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@newrelic/winston-enricher/-/winston-enricher-1.0.0.tgz",
+  "_spec": "1.0.0",
+  "_where": "/Users/David_Nazaryan/Projects/web-exp-api",
+  "author": {
+    "name": "New Relic Node.js Agent Team",
+    "email": "nodejs@newrelic.com"
+  },
+  "bugs": {
+    "url": "https://github.com/newrelic/newrelic-winston-logenricher-node/issues"
+  },
+  "dependencies": {
+    "winston": "^3.0.0"
+  },
+  "description": "New Relic log encricher for the `winston` package. Allows `winston` logs to be consumed by New Relic Logs.",
+  "devDependencies": {
+    "@newrelic/test-utilities": "^4.0.0",
+    "concat-stream": "^2.0.0",
+    "eslint": "^5.1.0",
+    "newrelic": "^6.2.0",
+    "tap": "^14.6.9"
+  },
+  "engines": {
+    "node": ">=10.0"
+  },
+  "homepage": "https://github.com/newrelic/newrelic-winston-logenricher-node",
+  "license": "Apache-2.0",
+  "main": "index.js",
+  "name": "@newrelic/winston-enricher",
+  "peerDependencies": {
+    "newrelic": ">=6.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/newrelic/newrelic-winston-logenricher-node.git"
+  },
+  "scripts": {
+    "lint": "eslint *.js lib tests",
+    "test": "npm run unit && npm run lint && npm run versioned",
+    "unit": "tap tests/unit/**/*.tap.js --no-coverage",
+    "versioned": "versioned-tests --minor -i 2 'tests/versioned/*.tap.js'"
+  },
+  "version": "1.0.0"
+}

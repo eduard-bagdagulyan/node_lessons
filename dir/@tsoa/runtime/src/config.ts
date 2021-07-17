@@ -1,0 +1,211 @@
+import * as ts from 'typescript';
+import { Swagger } from './swagger/swagger';
+
+export interface Config {
+  /**
+   * Swagger generation configuration object
+   */
+  spec: SpecConfig;
+
+  /**
+   * Route generation configuration object
+   */
+  routes: RoutesConfig;
+
+  /**
+   * Directories to ignore during TypeScript metadata scan
+   */
+  ignore?: string[];
+
+  /**
+   * The entry point to your API
+   */
+  entryFile: string;
+
+  /**
+   * An array of path globs that point to your route controllers that you would like to have tsoa include.
+   */
+  controllerPathGlobs?: string[];
+
+  /**
+   * Modes that allow you to prevent input data from entering into your API. This will document your decision in the swagger.yaml and it will turn on excess-property validation (at runtime) in your routes.
+   */
+  noImplicitAdditionalProperties?: 'throw-on-extras' | 'silently-remove-extras' | 'ignore';
+
+  /**
+   * Typescript CompilerOptions to be used during generation
+   *
+   * @type {ts.CompilerOptions}
+   * @memberof RoutesConfig
+   */
+  compilerOptions?: ts.CompilerOptions;
+}
+
+/**
+ * these options will be removed in a future version since we would prefer consumers to explicitly state their preference that the tsoa validation throws or removes additional properties
+ */
+export type DeprecatedOptionForAdditionalPropertiesHandling = true | false;
+
+export interface SpecConfig {
+  /**
+   * Generated SwaggerConfig.json will output here
+   */
+  outputDirectory: string;
+
+  /**
+   * API host, expressTemplate.g. localhost:3000 or myapi.com
+   */
+  host?: string;
+
+  /**
+   * Base-name of swagger.json or swagger.yaml.
+   *
+   * @default: "swagger"
+   */
+  specFileBaseName?: string;
+
+  /**
+
+   * API version number; defaults to npm package version
+   */
+  version?: string;
+
+  /**
+   * Major OpenAPI version to generate; defaults to version 2 when not specified
+   * Possible values:
+   *  - 2: generates OpenAPI version 2.
+   *  - 3: generates OpenAPI version 3.
+   */
+  specVersion?: Swagger.SupportedSpecMajorVersion;
+
+  /**
+   * API name; defaults to npm package name
+   */
+  name?: string;
+
+  /**
+   * API description; defaults to npm package description
+   */
+  description?: string;
+
+  /**
+   * Contact Information
+   */
+  contact?: {
+    /**
+     * The identifying name of the contact person/organization.
+     * @default npm package author
+     */
+    name?: string;
+
+    /**
+     * The email address of the contact person/organization.
+     * @default npm package author email
+     */
+    email?: string;
+
+    /**
+     * API Info url
+     * The URL pointing to the contact information.
+     * @default npm package author url
+     */
+    url?: string;
+  };
+
+  /**
+   * API license; defaults to npm package license
+   */
+  license?: string;
+
+  /**
+   * Base API path; e.g. the 'v1' in https://myapi.com/v1
+   */
+  basePath?: string;
+
+  /**
+   * Extend generated swagger spec with this object
+   * Note that generated properties will always take precedence over what get specified here
+   */
+  spec?: any;
+
+  /**
+   * Alter how the spec is merged to generated swagger spec.
+   * Possible values:
+   *  - 'immediate' is overriding top level elements only thus you can not append a new path or alter an existing value without erasing same level elements.
+   *  - 'recursive' proceed to a deep merge and will concat every branches or override or create new values if needed. @see https://www.npmjs.com/package/merge
+   *  - 'deepmerge' uses `deepmerge` to merge, which will concat object branches and concat arrays as well @see https://www.npmjs.com/package/deepmerge
+   * The default is set to immediate so it is not breaking previous versions.
+   * @default 'immediate'
+   */
+  specMerging?: 'immediate' | 'recursive' | 'deepmerge';
+
+  /**
+   * Security Definitions Object
+   * A declaration of the security schemes available to be used in the
+   * specification. This does not enforce the security schemes on the operations
+   * and only serves to provide the relevant details for each scheme.
+   */
+  securityDefinitions?: {
+    [name: string]: Swagger.Security;
+  };
+
+  /**
+   * Swagger Tags Information for your API
+   */
+  tags?: Swagger.Tag[];
+
+  yaml?: boolean;
+
+  schemes?: Swagger.Protocol[];
+
+  /**
+   * Enable x-enum-varnames support
+   * @default false
+   */
+  xEnumVarnames?: boolean;
+}
+
+export interface RoutesConfig {
+  /**
+   * Routes directory; generated routes.ts (which contains the generated code wiring up routes using middleware of choice) will be dropped here
+   */
+  routesDir: string;
+
+  /**
+   * Routes filename; the filename of the generated route file ('routes.ts' by default)
+   */
+  routesFileName?: string;
+
+  /**
+   * Base API path; e.g. the '/v1' in https://myapi.com/v1
+   */
+  basePath?: string;
+
+  /**
+   * Middleware provider.
+   */
+  middleware?: 'express' | 'hapi' | 'koa';
+
+  /**
+   * Override the Middleware template
+   */
+  middlewareTemplate?: string;
+
+  /**
+   * IOC module; e.g. './inversify/ioc' where IOC container named `iocContainer` is defined (https://github.com/inversify/InversifyJS)
+   */
+  iocModule?: string;
+
+  /**
+   * Authentication Module for express, hapi and koa
+   */
+  authenticationModule?: string;
+
+  /**
+   * When enabled, the `@SuccessResponse` annotations' code is used for responses by default.
+   * Otherwise, non-empty responses default to 200 and empty responses to 204.
+   *
+   * @default false
+   */
+  useSuccessResponseCode?: boolean;
+}

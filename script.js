@@ -1,43 +1,25 @@
-const EventEmitter = require('events');
-const logger = new EventEmitter();
-const process = require('process')
-const args = process.argv.slice(2)
+//First Homework
+// const readline = require('readline');
+// const fs = require('fs');
+// const path = require('path')
 
-const users = []
-const msgs = []
+// const rl = readline.createInterface({
+//     input: process.stdin,
+//     output: process.stdout
+// });
 
-logger.on('message', (msg) => {
-    console.log(`New Message: ${msg}`);
-    msgs.push(msg);
-})
+// rl.question('Enter The Path: ', (answer) => {
+//     const normalizedPath = path.normalize(answer);
+//     console.log(fs.readFileSync(normalizedPath, 'utf8'));
+//     rl.close();
+// });
 
-logger.on('login', (name) => {
-    console.log(`New User: ${name}`);
-    users.push(name);
-})
+//Second Homework
+// const csv = require('csvtojson');
+// csv().fromFile('addresses.csv').then((jsonObj) => {
+//     console.log(jsonObj);
+// })
 
-logger.on('getUsers', () => {
-    console.log('Logged Users:');
-    for (const user of users) {
-        console.log(user + '\n');
-    }
-})
-
-logger.on('getMessages', () => {
-    console.log('Messages:');
-    for (const user of msgs) {
-        console.log(user + '\n');
-    }
-})
-
-if (args) {
-    if (args[0] == '--addUser') {
-        logger.emit('login', args[1])
-    } else if (args[0] == '--message') {
-        logger.emit('message', args[1])
-    } else {
-        console.log('Undefined Command');
-    }
-} else {
-    console.log('You have not entered args');
-}
+//Third Homework
+const tree = require('tree-node-cli');
+console.log(tree('dir'));

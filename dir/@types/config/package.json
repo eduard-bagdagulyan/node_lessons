@@ -1,0 +1,73 @@
+{
+  "_args": [
+    [
+      "@types/config@0.0.38",
+      "/Users/David_Nazaryan/Projects/web-exp-api"
+    ]
+  ],
+  "_development": true,
+  "_from": "@types/config@0.0.38",
+  "_id": "@types/config@0.0.38",
+  "_inBundle": false,
+  "_integrity": "sha512-z2WizAfIFgSv8SQfQ8c0LlbDAcK47D/o93XW6bxZ9t3bs4fmmfAPjk1nhAIBTG84PBBCHfSPM+8g7vhLdbFokg==",
+  "_location": "/@types/config",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@types/config@0.0.38",
+    "name": "@types/config",
+    "escapedName": "@types%2fconfig",
+    "scope": "@types",
+    "rawSpec": "0.0.38",
+    "saveSpec": null,
+    "fetchSpec": "0.0.38"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@types/config/-/config-0.0.38.tgz",
+  "_spec": "0.0.38",
+  "_where": "/Users/David_Nazaryan/Projects/web-exp-api",
+  "bugs": {
+    "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/issues"
+  },
+  "contributors": [
+    {
+      "name": "Roman Korneev",
+      "url": "https://github.com/RWander"
+    },
+    {
+      "name": "Forrest Bice",
+      "url": "https://github.com/forrestbice"
+    },
+    {
+      "name": "James Donald",
+      "url": "https://github.com/jndonald3"
+    },
+    {
+      "name": "Alberto Vasquez",
+      "url": "https://github.com/albertovasquez"
+    },
+    {
+      "name": "Christian Vaagland Tellnes",
+      "url": "https://github.com/tellnes"
+    }
+  ],
+  "dependencies": {},
+  "description": "TypeScript definitions for node-config",
+  "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped#readme",
+  "license": "MIT",
+  "main": "",
+  "name": "@types/config",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+    "directory": "types/config"
+  },
+  "scripts": {},
+  "typeScriptVersion": "3.3",
+  "types": "index.d.ts",
+  "typesPublisherContentHash": "3cb15de0e628a17fd2691bd293ef248cbbe74814c134718e63cce8f3f9e73b71",
+  "version": "0.0.38"
+}

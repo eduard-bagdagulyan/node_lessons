@@ -1,0 +1,85 @@
+{
+  "_args": [
+    [
+      "@types/newrelic@7.0.0",
+      "/Users/David_Nazaryan/Projects/web-exp-api"
+    ]
+  ],
+  "_development": true,
+  "_from": "@types/newrelic@7.0.0",
+  "_id": "@types/newrelic@7.0.0",
+  "_inBundle": false,
+  "_integrity": "sha512-WOveH+VtW7qHr478F3vAlN5TLAwLfK5FQQplwBuELKx6aQ9D+zbNu6k23JZ0qknT0h/xw04dqZRsrPhLw06+Vg==",
+  "_location": "/@types/newrelic",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@types/newrelic@7.0.0",
+    "name": "@types/newrelic",
+    "escapedName": "@types%2fnewrelic",
+    "scope": "@types",
+    "rawSpec": "7.0.0",
+    "saveSpec": null,
+    "fetchSpec": "7.0.0"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@types/newrelic/-/newrelic-7.0.0.tgz",
+  "_spec": "7.0.0",
+  "_where": "/Users/David_Nazaryan/Projects/web-exp-api",
+  "bugs": {
+    "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/issues"
+  },
+  "contributors": [
+    {
+      "name": "Matt R. Wilson",
+      "url": "https://github.com/mastermatt"
+    },
+    {
+      "name": "Brooks Patton",
+      "url": "https://github.com/brookspatton"
+    },
+    {
+      "name": "Michael Bond",
+      "url": "https://github.com/MichaelRBond"
+    },
+    {
+      "name": "Kyle Scully",
+      "url": "https://github.com/zieka"
+    },
+    {
+      "name": "Kenneth Aasan",
+      "url": "https://github.com/kennethaasan"
+    },
+    {
+      "name": "Jon Flaishans",
+      "url": "https://github.com/funkswing"
+    },
+    {
+      "name": "Dylan Smith",
+      "url": "https://github.com/dylansmith"
+    },
+    {
+      "name": "BlueJeans by Verizon",
+      "url": "https://github.com/bluejeans"
+    }
+  ],
+  "dependencies": {},
+  "description": "TypeScript definitions for newrelic",
+  "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped#readme",
+  "license": "MIT",
+  "main": "",
+  "name": "@types/newrelic",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+    "directory": "types/newrelic"
+  },
+  "scripts": {},
+  "typeScriptVersion": "3.3",
+  "types": "index.d.ts",
+  "typesPublisherContentHash": "c9896483cd8ccbece1180bd67bf7dcac0fba5702f9cf5e5ae97fdc66becd6389",
+  "version": "7.0.0"
+}
