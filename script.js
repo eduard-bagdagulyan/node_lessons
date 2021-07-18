@@ -1,7 +1,8 @@
+const readline = require('readline');
+const fs = require('fs');
+const path = require('path')
+
 //First Homework
-// const readline = require('readline');
-// const fs = require('fs');
-// const path = require('path')
 
 // const rl = readline.createInterface({
 //     input: process.stdin,
@@ -14,12 +15,12 @@
 //     rl.close();
 // });
 
-//Second Homework
+// Second Homework
 // const csv = require('csvtojson');
 // csv().fromFile('addresses.csv').then((jsonObj) => {
-//     console.log(jsonObj);
+//     fs.writeFileSync('addresses.json', JSON.stringify(jsonObj, null, 2))
 // })
 
 //Third Homework
-const tree = require('tree-node-cli');
-console.log(tree('dir'));
+// const tree = require('tree-node-cli');
+// console.log(tree('dir'));
