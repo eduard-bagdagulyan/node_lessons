@@ -22,5 +22,19 @@ const path = require('path')
 // })
 
 //Third Homework
-// const tree = require('tree-node-cli');
-// console.log(tree('dir'));
+debugger
+function printTree(dir, depth) {
+    depth = depth || 0;
+    console.log(dir, depth);
+    fs.readdir(dir, (err, res) => {
+        if (err) {
+            return
+        } else {
+            for (const elem of res) {
+                const newPath = path.join(dir, elem)
+                printTree(newPath, depth+1)
+            }
+        }
+    })
+}
+printTree('dir')
