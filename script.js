@@ -22,7 +22,6 @@ const path = require('path')
 // })
 
 //Third Homework
-debugger
 function printTree(dir, depth) {
     depth = depth || 0;
     console.log(dir, depth);
