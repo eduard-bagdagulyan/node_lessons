@@ -1,29 +1,33 @@
-const cluster = require('cluster');
-const process = require('process');
-
-if (cluster.isMaster) {
-    console.log('Master Process is Started');
-    const worker = cluster.fork();
-    worker.send(50);
-    worker.on('message', (msg) => {
-        console.log(msg);
-        worker.kill()
-    })
-
-} else if (cluster.isWorker) {
-    process.on('message', (msg) => {
-        const result = factorialize(msg);
-        process.send(result)
-    });
-}
-
-function factorialize(num) {
-    if (num < 0)
-        return -1;
-    else if (num == 0)
-        return 1;
-
-    else {
-        return (num * factorialize(num - 1));
+var Car = /** @class */ (function () {
+    function Car(model, price) {
+        this.model = model;
+        this.price = price;
     }
-}
+    Car.prototype.setColor = function (color) {
+        this.color = color;
+        this.price += 500;
+    };
+    Car.prototype.setDoors = function (doorsCount) {
+        this.doors = doorsCount;
+        this.price += 300;
+    };
+    Car.prototype.setEngine = function (engineType) {
+        if (engineType === 'Hybrid') {
+            this.engine = 'Hybrid';
+            this.price += 1000;
+        }
+        else {
+            this.engine = 'Oil';
+            this.price += 700;
+        }
+    };
+    Car.prototype.log = function () {
+        console.log("Your Configuration: \n Model: " + this.model + ", \n Color: " + this.color + ", \n Doors: " + this.doors + ", \n Engine: " + this.engine + ", \n The Price For Your Config Is " + this.price);
+    };
+    return Car;
+}());
+var bmw = new Car('BMW M5', 95000);
+bmw.setColor('Black');
+bmw.setDoors(5);
+bmw.setEngine('Oil');
+bmw.log();
