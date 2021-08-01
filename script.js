@@ -1,14 +1,24 @@
-const fs = require('fs');
-const zlib = require('zlib');
-const path = require('path')
+const express = require('express')
+const app = express()
+let port = 3000
 
-const zip = zlib.createGzip()
-const folderPath = process.argv.slice(2)
-const files = fs.readdirSync(folderPath[0])
-const newFolder = fs.mkdirSync('folder2')
+app.get('/', (req, res) => {
+    res.send('Got a GET request');
+});
 
-for (const file of files) {
-    const input = fs.createReadStream(path.join(folderPath[0], file));
-    const output = fs.createWriteStream('folder2/archive.zip');
-    input.pipe(zip).pipe(output)
-}
+app.post('/', (req, res) => {
+    res.send('Got a POST request');
+});
+
+app.put('/', (req, res) => {
+    res.send('Got a PUT request');
+});
+
+app.delete('/', (req, res) => {
+    res.send('Got a DELETE request');
+});
+
+
+app.listen(port, () => {
+    console.log(`Example app listening at http://localhost:${port}`)
+})
