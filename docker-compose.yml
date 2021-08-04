@@ -1,0 +1,28 @@
+version: "3.7"
+
+services:
+  app:
+    image: node:lts
+    command: npm install -g nodemon
+    command: node script.js
+    ports:
+      - 3000:3000
+    working_dir: /node_lessons
+    volumes:
+        - ./:/node_lessons
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_USER: root
+      MYSQL_PASSWORD: secret
+      MYSQL_DB: homework
+
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - todo-mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: homework
+
+volumes:
+  todo-mysql-data:
