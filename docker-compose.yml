@@ -10,19 +10,3 @@ services:
     working_dir: /node_lessons
     volumes:
         - ./:/node_lessons
-    environment:
-      MYSQL_HOST: mysql
-      MYSQL_USER: root
-      MYSQL_PASSWORD: secret
-      MYSQL_DB: homework
-
-  mysql:
-    image: mysql:5.7
-    volumes:
-      - todo-mysql-data:/var/lib/mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: secret
-      MYSQL_DATABASE: homework
-
-volumes:
-  todo-mysql-data:
